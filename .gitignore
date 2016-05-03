@@ -1,0 +1,9 @@
+#*#
+*~
+.git/*
+/elpa/*
+/eshell/*
+/auto-save-list/*
+recentf
+tramp
+ido.last

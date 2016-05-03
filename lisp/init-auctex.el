@@ -3,7 +3,6 @@
 (if (string-equal system-type "windows-nt")
 	(require 'tex-mik))
 
-;;'auto-fill-mode
 (mapc (lambda (mode)
       (add-hook 'LaTeX-mode-hook mode))
       (list 'LaTeX-math-mode
