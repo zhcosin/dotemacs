@@ -25,6 +25,7 @@
 ;; to it.
 (setq show-paren-style 'parenthesis) 
 
+(when (display-graphic-p)
 ;; Setting English Font
 (set-face-attribute
 'default nil :font "Consolas 11")
@@ -33,6 +34,7 @@
 (set-fontset-font (frame-parameter nil 'font)
 charset
 (font-spec :family "Microsoft Yahei" :size 16)))
+)
 
 ;; set coding system.
 ;; you can try the follow command to reload file with
@@ -119,12 +121,10 @@ charset
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; 主动加载 Dired Mode
-;; (require 'dired)
+ (require 'dired)
 ;; (defined-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 
-;; 延迟加载
-(with-eval-after-load 'dired
-  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 
 ;; 启用 dired-x 可以让每一次进入 Dired 模式时，使用新的快捷键 C-x C-j 就可以进入当前文件夹的所在的路径。
 (require 'dired-x)

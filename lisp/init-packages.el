@@ -17,7 +17,7 @@
 			   monokai-theme
 			   company
 			   evil
-			   smartparents
+			   ;;smartparents
 			   auctex
 			   ) "Default packages")
 
@@ -45,7 +45,7 @@
 	(package-install pkg))
   )
 
-(dolist (package package-list)
+(dolist (package zhcosin/packages)
   (zhcosin/install-package-if-not-found package))
 
 (provide 'init-packages)
