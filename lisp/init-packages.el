@@ -1,12 +1,13 @@
 
 
 ;;list the repositories containing them
-(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+(setq package-archives '(
                          ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
-
-;;list the packages you want
-(setq package-list '(evil smex desktop session company auctex popwin monokai-theme auctex))
+			 ("org" . "http://orgmode.org/elpa/")
+			 ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+			 ("elpa" . "http://tromey.com/elpa/")
+			 ))
 
 (defvar zhcosin/packages '(
 			   smex
@@ -18,7 +19,10 @@
 			   company
 			   evil
 			   ;;smartparents
+			   magit
+			   ox-latex-chinese
 			   auctex
+			   company-auctex
 			   ) "Default packages")
 
 (setq package-selected-packages zhcosin/packages)
@@ -41,7 +45,7 @@
 	  (message "%s" "Refreshing package database...")
 	  (package-refresh-contents)
 ;;	  )
-	(message "%s" "install package...")
+	(message "install package %s ..." pkg)
 	(package-install pkg))
   )
 
