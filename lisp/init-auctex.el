@@ -2,6 +2,10 @@
 ;;(load "preview-latex.el" nil t t)
 (if (string-equal system-type "windows-nt")
 	(require 'tex-mik))
+	
+
+;; Ask which tex file is master instead of always assume current file is master file.
+(setq-default TeX-master nil) ; Query for master file.
 
 (mapc (lambda (mode)
       (add-hook 'LaTeX-mode-hook mode))
