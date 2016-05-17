@@ -10,6 +10,8 @@
 			 ))
 
 (defvar zhcosin/packages '(
+			   ;; requires Emacs-24.3 or later versions.
+			   helm
 			   smex
 			   desktop
 			   session
