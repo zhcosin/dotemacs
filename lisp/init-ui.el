@@ -2,22 +2,22 @@
 ;; Enable full screen when start.
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
-;; å¼€å¯èœå•æ 
+;; ¿ªÆô²Ëµ¥À¸
 (menu-bar-mode 1)
 
-;; å…³é—­å·¥å…·æ , tool-bar-mode å³ä¸ºä¸€ä¸ª Minor Mode
+;; ¹Ø±Õ¹¤¾ßÀ¸, tool-bar-mode ¼´ÎªÒ»¸ö Minor Mode
 (tool-bar-mode -1)
 
 (when (display-graphic-p)
-;; å…³é—­æ–‡ä»¶æ»‘åŠ¨æ§ä»¶
+;; ¹Ø±ÕÎÄ¼ş»¬¶¯¿Ø¼ş
 (scroll-bar-mode -1)
 )
 
-;; æ›´æ”¹å…‰æ ‡çš„æ ·å¼ï¼Œ
-;; setq è®¾ç½®å½“å‰ç¼“å†²åŒºä¸­çš„å˜é‡å€¼ï¼Œsetq-defaultè®¾ç½®çš„ä¸ºå…¨å±€çš„å˜é‡çš„å€¼.
+;; ¸ü¸Ä¹â±êµÄÑùÊ½£¬
+;; setq ÉèÖÃµ±Ç°»º³åÇøÖĞµÄ±äÁ¿Öµ£¬setq-defaultÉèÖÃµÄÎªÈ«¾ÖµÄ±äÁ¿µÄÖµ.
 (setq-default cursor-type 'bar)
 
-;; å…³é—­å¯åŠ¨å¸®åŠ©ç”»é¢
+;; ¹Ø±ÕÆô¶¯°ïÖú»­Ãæ
 (setq inhibit-splash-screen t)
 
 ;; scroll one line at a time.
