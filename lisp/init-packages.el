@@ -22,7 +22,7 @@
 			   evil
 			   ;;smartparents
 			   magit
-			   ox-latex-chinese
+			   ;;ox-latex-chinese
 			   auctex
 			   company-auctex
 			   ) "Default packages")
