@@ -21,4 +21,6 @@
 ;;(require 'init-ox-latex-chinese)
 (require 'init-auctex)
 (require 'init-company-auctex)
+(require 'init-org-page)
+;;(require 'init-ego)
 (require 'utils)

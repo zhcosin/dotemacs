@@ -25,6 +25,8 @@
 			   ;;ox-latex-chinese
 			   auctex
 			   company-auctex
+			   org-page
+			   ;;ego
 			   ) "Default packages")
 
 (setq package-selected-packages zhcosin/packages)
