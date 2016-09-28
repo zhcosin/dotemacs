@@ -1,6 +1,6 @@
 
 ;; 关闭自动备份
-(setq make-backup-files nil)
+;;(setq make-backup-files nil)
 
 ;; 关闭自动保存功能
 (setq auto-save-default nil)
