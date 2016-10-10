@@ -1,4 +1,5 @@
 
+(require 'subr-x)
 (require 'ego)
 
 (ego-add-to-alist 'ego-project-config-alist

@@ -27,6 +27,8 @@
 			   company-auctex
 			   org-page
 			   ;;ego
+			   flycheck
+			   chinese-number
 			   ) "Default packages")
 
 (setq package-selected-packages zhcosin/packages)

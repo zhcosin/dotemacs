@@ -24,3 +24,7 @@
 (require 'init-org-page)
 ;;(require 'init-ego)
 (require 'utils)
+(require 'init-chinese-number)
+;;(require 'init-flycheck)
+(require 'init-scheme)
+;;(require 'autopair)
