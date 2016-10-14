@@ -29,6 +29,7 @@
 			   ;;ego
 			   flycheck
 			   chinese-number
+			   parinfer
 			   ) "Default packages")
 
 (setq package-selected-packages zhcosin/packages)
