@@ -30,6 +30,7 @@
 			   flycheck
 			   chinese-number
 			   parinfer
+			   helm-swoop
 			   ) "Default packages")
 
 (setq package-selected-packages zhcosin/packages)

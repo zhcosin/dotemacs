@@ -29,3 +29,4 @@
 (require 'init-scheme)
 (require 'init-parinfer)
 ;;(require 'autopair)
+(require 'init-helm-swoop)
