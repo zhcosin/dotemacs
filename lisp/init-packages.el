@@ -31,6 +31,7 @@
 			   chinese-number
 			   parinfer
 			   helm-swoop
+			   swiper-helm
 			   ) "Default packages")
 
 (setq package-selected-packages zhcosin/packages)
