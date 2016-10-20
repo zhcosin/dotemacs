@@ -1,3 +1,6 @@
+
+(zhcosin/install-package-if-not-found 'auctex)
+
 (load "auctex.el" nil t t)
 ;;(load "preview-latex.el" nil t t)
 (if (string-equal system-type "windows-nt")

@@ -1,3 +1,4 @@
+(zhcosin/install-package-if-not-found 'evil)
 ;; enable or disable evil mode.
 ;; if you want turn on/off evil mode when emacs is running,
 ;; you can use M-x turn-on-evil-mode or turn-off-evil-mode.

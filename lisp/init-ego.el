@@ -1,4 +1,6 @@
 
+(zhcosin/install-package-if-not-found 'ego)
+
 (require 'subr-x)
 (require 'ego)
 

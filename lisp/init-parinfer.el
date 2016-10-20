@@ -1,3 +1,4 @@
+(zhcosin/install-package-if-not-found 'parinfer)
 
 (require 'parinfer)
 

@@ -1,4 +1,4 @@
-
+(zhcosin/install-package-if-not-found 'helm-swoop)
 
 (require 'helm-swoop)
 

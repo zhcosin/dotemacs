@@ -1,3 +1,4 @@
+(zhcosin/install-package-if-not-found 'ido)
 
 ;;ido.el
 (require 'ido)

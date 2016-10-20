@@ -50,15 +50,11 @@
 
 (defun zhcosin/install-package-if-not-found(pkg)
   (unless (package-installed-p pkg)
-;;	(when (need-refresh-contents)
-	  (message "%s" "Refreshing package database...")
-	  (package-refresh-contents)
-;;	  )
-	(message "install package %s ..." pkg)
-	(package-install pkg))
-  )
-
-(dolist (package zhcosin/packages)
-  (zhcosin/install-package-if-not-found package))
+    ;;	(when (need-refresh-contents)
+    (message "%s" "Refreshing package database...")
+    (package-refresh-contents))
+  ;;	  )
+  (message "install package %s ..." pkg)
+  (package-install pkg))
 
 (provide 'init-packages)

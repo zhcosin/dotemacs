@@ -1,3 +1,4 @@
+(zhcosin/install-package-if-not-found 'org-page)
 
 (require 'org-page)
 (setq op/theme 'mdo)
