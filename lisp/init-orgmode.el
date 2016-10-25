@@ -56,7 +56,15 @@
 
 (setq org-latex-pdf-process
       '("xelatex -interaction nonstopmode -output-directory %o %f"
-	"xelatex -interaction nonstopmode -output-directory %o %f"
-	"xelatex -interaction nonstopmode -output-directory %o %f"))
+       "xelatex -interaction nonstopmode -output-directory %o %f"
+       "xelatex -interaction nonstopmode -output-directory %o %f"))
+
+;; for math.
+(defun zhcosin/insert-inline-formulas()
+  (interactive)
+  (insert "\\(  \\)")
+  (backward-char 3))
+   
+(define-key org-mode-map (kbd "M-$") 'zhcosin/insert-inline-formulas)
 
 (provide 'init-orgmode)
