@@ -25,16 +25,16 @@
 ;; to it.
 (setq show-paren-style 'parenthesis) 
 
-(when (display-graphic-p)
+;;(when (display-graphic-p)
 ;; Setting English Font
-(set-face-attribute
-'default nil :font "Consolas 11")
+;;(set-face-attribute
+;;'default nil :font "Consolas 11")
 ;; Chinese Font
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-(set-fontset-font (frame-parameter nil 'font)
-charset
-(font-spec :family "Microsoft Yahei" :size 16)))
-)
+;;(dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;(set-fontset-font (frame-parameter nil 'font)
+;;charset
+;;(font-spec :family "Microsoft Yahei" :size 16)))
+;;)
 
 ;; set coding system.
 ;; you can try the follow command to reload file with
@@ -59,10 +59,6 @@ charset
 (prefer-coding-system 'utf-8)
 ;;(set-selection-coding-system 'utf-16-le)
 
-
-;; 开启全局 Company 补全
-(global-company-mode t)
-
 ;; 使用下面的配置将删除功能配置成与其他图形界面的编辑器相同，即当你选中一段文字之后输入一个字符会替换掉你选中部分的文字。
 (delete-selection-mode t)
 
@@ -72,18 +68,10 @@ charset
 ;; 高亮当前行
 (global-hl-line-mode t)
 
-;; 安装主题
-;;(add-to-list zhcosin/packages 'monokai-theme)
-(load-theme 'monokai t)
-
 ;; 最近访问文件列表
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
-
-;; popwin 插件可以自动将光标移动到，新创建的窗口中。
-(require 'popwin)
-;;(popwin-mode t)
 
 ;; 自动加载外部修改过的文件
 (global-auto-revert-mode t)
