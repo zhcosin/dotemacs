@@ -2,11 +2,15 @@
 
 ;;list the repositories containing them
 (setq package-archives '(
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-			 ("org" . "http://orgmode.org/elpa/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("elpa" . "http://tromey.com/elpa/")
+                         ;;("gnu" . "http://elpa.gnu.org/packages/")
+                         ("gnu" . "http://elpa.zilongshanren.com/gnu/")
+			 ;;("org" . "http://orgmode.org/elpa/")
+			 ("org" . "http://elpa.zilongshanren.com/org/")
+			 ;;("melpa" . "http://melpa.milkbox.net/packages/")
+			 ("melpa" . "http://elpa.zilongshanren.com/melpa/")
+                         ;;("marmalade" . "http://marmalade-repo.org/packages/")
+			 ("marmalade" . "http://elpa.zilongshanren.com/marmalade/")
+			 ;;("elpa" . "http://tromey.com/elpa/")
 			 ))
 
 (defvar zhcosin/packages '(
