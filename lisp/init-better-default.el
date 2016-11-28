@@ -65,8 +65,9 @@
 ;; 启用自动括号匹配(Highlight Matching Parenthesis)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
-;; 高亮当前行
-(global-hl-line-mode t)
+;; Hightlight current line only on GUI, not in terminal, avoid to couldn't find cursor position. 2016-11-28
+(when (display-graphic-p)
+  (global-hl-line-mode t))
 
 ;; 最近访问文件列表
 (require 'recentf)
