@@ -1,13 +1,28 @@
 
+(defvar zhcosin/use-local-archives t)
+
+(defvar zhcosin/local-archive (cons "myelpa" "~/myelpa"))
+(defvar zhcosin/melpa-archive (cons "melpa" "http://melpa.milkbox.net/packages/"))
+(defvar zhcosin/elpa-archive (cons "elpa" "http://tromey.com/elpa/"))
+(defvar zhcosin/gnu-archive (cons "gnu" "http://elpa.gnu.org/packages/"))
+(defvar zhcosin/org-archive (cons "org" "http://orgmode.org/elpa/"))
+(defvar zhcosin/marmalade-archive (cons "marmalade" "http://marmalade-repo.org/packages/"))
+
+(defvar zhcosin/local-archives '(
+				 'zhcosin/local-archive
+				 ))
+
+(defvar zhcosin/net-archives '(
+			       'zhcosin/melpa-archive
+			       'zhcosin/elpa-archive
+			       'zhcosin/gnu-archive
+			       'zhcosin/org-archive
+			       'zhcosin/marmalade-archive
+			       ))
 
 ;;list the repositories containing them
-(setq package-archives '(
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-			 ("org" . "http://orgmode.org/elpa/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("elpa" . "http://tromey.com/elpa/")
-			 ))
+(setq package-archives (if zhcosin/use-local-archives zhcosin/local-archives zhcosin/net-archives))
+
 
 (defvar zhcosin/packages '(
 			   ;; requires Emacs-24.3 or later versions.
@@ -45,8 +60,8 @@
 
 ;;install the missing packages
 ;;(dolist (package package-list)
-  ;;(unless (package-installed-p package)
-    ;;(package-install package)))
+;;(unless (package-installed-p package)
+;;(package-install package)))
 
 (defun zhcosin/install-package-if-not-found(pkg)
   (unless (package-installed-p pkg)
