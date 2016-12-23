@@ -23,7 +23,6 @@
 ;;list the repositories containing them
 (setq package-archives (if zhcosin/use-local-archives zhcosin/local-archives zhcosin/net-archives))
 
-
 (defvar zhcosin/packages '(
 			   ;; requires Emacs-24.3 or later versions.
 			   helm
