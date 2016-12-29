@@ -1,6 +1,7 @@
 #*#
 *~
 .git/*
+.session
 /elpa/*
 /eshell/*
 /auto-save-list/*
