@@ -1,27 +1,26 @@
 
-(defvar zhcosin/use-local-archives t)
+(defvar zhcosin/local-pkg-archives '(
+				     ("myelpa" . "~/myelpa")
+				     ))
 
-(defvar zhcosin/local-archive (cons "myelpa" "~/myelpa"))
-(defvar zhcosin/melpa-archive (cons "melpa" "http://melpa.milkbox.net/packages/"))
-(defvar zhcosin/elpa-archive (cons "elpa" "http://tromey.com/elpa/"))
-(defvar zhcosin/gnu-archive (cons "gnu" "http://elpa.gnu.org/packages/"))
-(defvar zhcosin/org-archive (cons "org" "http://orgmode.org/elpa/"))
-(defvar zhcosin/marmalade-archive (cons "marmalade" "http://marmalade-repo.org/packages/"))
+(defvar zhcosin/emacscn-pkg-archives '(
+				       ("gnu"   . "http://elpa.emacs-china.org/gnu/")
+				       ("melpa" . "http://elpa.emacs-china.org/melpa/")
+				       ))
 
-(defvar zhcosin/local-archives '(
-				 'zhcosin/local-archive
-				 ))
 
-(defvar zhcosin/net-archives '(
-			       'zhcosin/melpa-archive
-			       'zhcosin/elpa-archive
-			       'zhcosin/gnu-archive
-			       'zhcosin/org-archive
-			       'zhcosin/marmalade-archive
-			       ))
 
-;;list the repositories containing them
-(setq package-archives (if zhcosin/use-local-archives zhcosin/local-archives zhcosin/net-archives))
+(defvar zhcosin/general-pkg-archives '(
+				       ("melpa" . "http://melpa.milkbox.net/packages/")
+				       ("elpa" . "http://tromey.com/elpa/")
+				       ("gnu" . "http://elpa.gnu.org/packages/")
+				       ("org" . "http://orgmode.org/elpa/")
+				       ("marmalade" . "http://marmalade-repo.org/packages/")
+				       ))
+
+
+;; select a package archives from the three variables upper.
+(setq package-archives zhcosin/emacscn-pkg-archives)
 
 (defvar zhcosin/packages '(
 			   ;; requires Emacs-24.3 or later versions.
