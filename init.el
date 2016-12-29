@@ -24,6 +24,7 @@
 (require 'init-orgmode)
 (require 'init-company)
 (require 'init-which-key)
+(require 'init-popwin)
 ;;(require 'init-smex)
 (require 'init-helm)
 (require 'init-tramp)
