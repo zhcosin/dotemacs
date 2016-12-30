@@ -28,6 +28,7 @@
 ;;(require 'init-smex)
 (require 'init-helm)
 (require 'init-tramp)
+(require 'init-evil-leader)
 (require 'init-evil)
 (require 'init-session)
 (require 'init-desktop)
