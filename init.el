@@ -33,6 +33,7 @@
 (require 'init-evil)
 (require 'init-session)
 (require 'init-desktop)
+(require 'init-evil-nerd-commenter)
 ;;(require 'init-ox-latex-chinese)
 (require 'init-auctex)
 (require 'init-company-auctex)
