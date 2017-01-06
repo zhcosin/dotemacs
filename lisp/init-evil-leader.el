@@ -7,7 +7,7 @@
 (evil-leader/set-leader "<SPC>")
 
 (evil-leader/set-key
-  "f" 'helm-find-files
-  "s" 'save-buffer)
+  "ff" 'helm-find-files
+  "fs" 'save-buffer)
 
 (provide 'init-evil-leader)
