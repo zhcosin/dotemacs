@@ -9,6 +9,7 @@ h1,h2,h3,h4,h5,h6,legend{
 }
 
 h1{
+    color:#990000;
     font-size:175%;
 }
 
@@ -17,28 +18,28 @@ h1{
 }
 
 h2{
+    color:#6E2432;
     font-size:150%;
 }
 
 h3{
+    color:#949B04;
     font-size:125%;
 }
 
 h4{
+    color:#2980B9;
     font-size:115%;
 }
 
 h5{
+    color:#2980B9;
     font-size:110%;
 }
 
 h6{
-    font-size:100%;
-}
-
-h4,h5,h6{
     color:#2980B9;
-    font-weight:300;
+    font-size:100%;
 }
 
 html{
