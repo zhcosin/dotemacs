@@ -26,6 +26,13 @@
   "bl" 'electric-buffer-list
   "hdf" 'describe-function
   "hdv" 'describe-variable
-  "hdk" 'describe-key)
+  "hdk" 'describe-key
+  "w-" 'split-window-below
+  "w/" 'split-window-right
+  "w=" 'balance-windows
+  "wh" 'evil-window-left
+  "wl" 'evil-window-right
+  "wj" 'evil-window-down
+  "wk" 'evil-window-up)
 
 (provide 'init-evil-leader)
