@@ -47,6 +47,7 @@
 (require 'init-parinfer)
 ;;(require 'autopair)
 (require 'init-helm-swoop)
+(require 'init-youdao-dictionary)
 
 (defconst cosin/after-init-time (current-time))
 
