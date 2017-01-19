@@ -17,6 +17,9 @@
 ;;(require 'init-ido)
 (require 'init-keybindings)
 (require 'init-packages)
+
+(zhcosin/install-package-if-not-found 'use-package)
+
 (require 'init-ui)
 (require 'init-better-default)
 (require 'init-colortheme)
