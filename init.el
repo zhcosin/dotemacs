@@ -27,6 +27,7 @@
 (require 'init-window-numbering)
 ;;(require 'init-powerline)
 (require 'init-orgmode)
+(require 'init-cdlatex)
 (require 'init-company)
 (require 'init-which-key)
 (require 'init-popwin)
