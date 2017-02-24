@@ -52,6 +52,7 @@
 ;;(require 'autopair)
 (require 'init-helm-swoop)
 (require 'init-youdao-dictionary)
+(require 'init-asy)
 
 (defconst cosin/after-init-time (current-time))
 
