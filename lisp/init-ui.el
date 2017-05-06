@@ -1,6 +1,6 @@
 
 ;; Enable full screen when start.
-(setq initial-frame-alist (quote ((fullscreen . maximized))))
+;;(setq initial-frame-alist (quote ((fullscreen . maximized))))
 
 ;; ¿ªÆô²Ëµ¥À¸
 (menu-bar-mode 1)
