@@ -1,0 +1,36 @@
+#+TITLE: Lengyueyang's Emacs configuration
+#+AUTHOR: lengyueyang
+#+DATE: \today
+#+EMAIL: maoxiaoweihl@gmail.com
+
+#+OPTIONS: H:5 num:t toc:2 \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+DESCRIPTION: A literate programming style exposition of my Emacs configuration beyond my spacemacs configuration
+#+KEYWORDS:
+#+LANGUAGE: en
+#+BABEL: :cache yes
+
+#+LATEX_CLASS: lengyue-org-article
+#+LATEX_CLASS_OPTIONS: [oneside,A4paper,12pt]
+#+LATEX_HEADER_EXTRA:
+#+LaTeX_HEADER: \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+#+LaTeX_HEADER: \graphicspath{{pic/}}
+#+LaTeX_HEADER: \hypersetup{colorlinks,linkcolor=black,filecolor=black,urlcolor=blue,citecolor=black}
+#+LaTeX_HEADER: \setcounter{secnumdepth}{4}
+#+LaTeX_HEADER: \titleformat{\paragraph}{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+#+LaTeX_HEADER: \linespread{1.2}
+
+* 一级标题
+
+这是一些内容.
+
+** 二级标题1
+
+这是二级标题下的内容
+
+** 二级标题2
+
+这是二级标题下的内容.

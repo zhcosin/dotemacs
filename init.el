@@ -53,6 +53,7 @@
 (require 'init-helm-swoop)
 (require 'init-youdao-dictionary)
 (require 'init-asy)
+(require 'init-org2pdf)
 
 (defconst cosin/after-init-time (current-time))
 
