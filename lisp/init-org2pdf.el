@@ -1,5 +1,5 @@
 
-;;org-mode export to latex
+;;org-mode export to latex, refer: https://emacs-china.org/t/spacemacs-org-mode-pdf/1577
   (require 'ox-latex)
   (setq org-export-latex-listings t)
 
