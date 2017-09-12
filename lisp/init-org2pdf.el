@@ -32,6 +32,8 @@
   (add-to-list 'org-latex-packages-alist
                '("" "amsmath"))
   (add-to-list 'org-latex-packages-alist
+               '("" "amsthm"))
+  (add-to-list 'org-latex-packages-alist
                '("" "tabularx" t))
   (add-to-list 'org-latex-packages-alist
                '("" "booktabs" t))
@@ -51,13 +53,15 @@
                '("Lenny" "fncychap" t))
 
   (add-to-list 'org-latex-classes
-               '("lengyue-org-book"
+               '("zhcosin-org-book"
                  "\\documentclass{ctexbook}
 \\usepackage{titlesec}
 \\usepackage{hyperref}
 
 [NO-DEFAULT-PACKAGES]
 [PACKAGES]
+
+\\newtheorem{theorem}{定理}[section]
 
 %\\setCJKmainfont{WenQuanYi Micro Hei} % 设置缺省中文字体
 %\\setCJKsansfont{WenQuanYi Micro Hei}
@@ -96,13 +100,15 @@ rulesepcolor= \\color{ red!20!green!20!blue!20}
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
   (add-to-list 'org-latex-classes
-               '("lengyue-org-article"
+               '("zhcosin-org-article"
                  "\\documentclass{ctexart}
 \\usepackage{titlesec}
 \\usepackage{hyperref}
 
 [NO-DEFAULT-PACKAGES]
 [PACKAGES]
+
+\\newtheorem{theorem}{定理}[section]
 
 \\parindent 2em
 
@@ -142,7 +148,7 @@ rulesepcolor= \\color{ red!20!green!20!blue!20}
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
   (add-to-list 'org-latex-classes
-               '("lengyue-org-beamer"
+               '("zhcosin-org-beamer"
                  "\\documentclass{beamer}
 \\usepackage[slantfont, boldfont]{xeCJK}
 % beamer set
@@ -151,6 +157,8 @@ rulesepcolor= \\color{ red!20!green!20!blue!20}
 
 [NO-DEFAULT-PACKAGES]
 [PACKAGES]
+
+\\newtheorem{theorem}{定理}[section]
 
 \\setCJKmainfont{WenQuanYi Micro Hei} % 设置缺省中文字体
 \\setCJKsansfont{WenQuanYi Micro Hei}
