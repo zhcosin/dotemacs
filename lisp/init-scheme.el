@@ -56,7 +56,10 @@ how-paren-style 'parenthesis)
 ;;; This is the binary name of my scheme implementation   
 ;;(setq scheme-program-name "E:\\Racket\\Racket.exe")
 ;;(setq exec-path (append exec-path '("E:/Scheme48/Scheme48_1.9")))
-(setq scheme-program-name "E:/Scheme48/Scheme48_1.9/scheme48.bat")
+(setq scheme-progname-map (make-hash-table)) 
+(puthash 'gnu/linux' "/usr/bin/scheme48" scheme-progname-map)
+(puthash 'windows-nt' "E:/Scheme48/Scheme48_1.9/scheme48.bat" scheme-progname-map)
+(setq scheme-program-name (gethash system-type scheme-progname-map))
 
 (kh/add-hook '(scheme-mode-hook)
              '((lambda ()
