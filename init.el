@@ -54,6 +54,7 @@
 (require 'init-youdao-dictionary)
 (require 'init-asy)
 (require 'init-org2pdf)
+(require 'init-python)
 
 (defconst cosin/after-init-time (current-time))
 
