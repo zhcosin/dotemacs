@@ -8,17 +8,29 @@
 (require 'ox-latex)
 (setq org-src-fontify-natively t)
 
+;; 设置 org 导出为 html 时公式的 mathjax 处理参数
+(setq org-html-mathjax-options
+  '((path "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+    (scale "100")
+    (align "center")
+    (indent "2em")
+    (mathml nil)))
+
+(setq org-html-mathjax-template
+      "<script type=\"text/javascript\" src=\"%PATH\"></script>")
+
+
 ;; for export latex
 (add-to-list 'org-latex-classes
 	     '("ctexart"
-		"\\documentclass[UTF8,a4paper]{ctexart}"
-		;;"\\documentclass[fontset=none,UTF8,a4paper,zihao=-4]{ctexart}"
-		("\\section{%s}" . "\\section*{%s}")
-		("\\subsection{%s}" . "\\subsection*{%s}")
-		("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-		("\\paragraph{%s}" . "\\paragraph*{%s}")
-		("\\subparagraph{%s}" . "\\subparagraph*{%s}")
-		)
+	       "\\documentclass[UTF8,a4paper]{ctexart}"
+	       ;;"\\documentclass[fontset=none,UTF8,a4paper,zihao=-4]{ctexart}"
+	       ("\\section{%s}" . "\\section*{%s}")
+	       ("\\subsection{%s}" . "\\subsection*{%s}")
+	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
+	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+	       )
 	     )
 
 
