@@ -1,4 +1,7 @@
 
+;; 开启左侧行号显示
+(global-linum-mode t)
+
 ;; 关闭自动备份
 ;;(setq make-backup-files nil)
 
