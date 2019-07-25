@@ -18,7 +18,7 @@
 (setq-default cursor-type 'bar)
 
 ;; ¹Ø±ÕÆô¶¯°ïÖú»­Ãæ
-(setq inhibit-splash-screen t)
+;;(setq inhibit-splash-screen t)
 
 ;; scroll one line at a time.
 (setq scroll-step 1)
