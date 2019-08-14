@@ -55,6 +55,7 @@
 (require 'init-asy)
 (require 'init-org2pdf)
 (require 'init-python)
+(require 'init-magit)
 
 (defconst cosin/after-init-time (current-time))
 
