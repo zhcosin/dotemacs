@@ -28,6 +28,12 @@
 ;; to it.
 (setq show-paren-style 'parenthesis) 
 
+(setq frame-title-format
+      '(buffer-file-name "emacs %b - %f" ; File buffer
+        (dired-directory dired-directory ; Dired buffer
+         (revert-buffer-function "%b" ; Buffer Menu
+          ("%b - Dir: " default-directory))))) ; Plain buffer
+
 ;;(when (display-graphic-p)
 ;; Setting English Font
 ;;(set-face-attribute
