@@ -30,9 +30,15 @@
 
 (setq frame-title-format
       '(buffer-file-name "emacs %b - %f" ; File buffer
-        (dired-directory dired-directory ; Dired buffer
-         (revert-buffer-function "%b" ; Buffer Menu
-          ("%b - Dir: " default-directory))))) ; Plain buffer
+       (dired-directory dired-directory ; Dired buffer
+            (revert-buffer-function "%b" ; Buffer Menu
+                  ("%b - Dir: " default-directory))))) ; Plain buffer
+
+;; 显示当前 buffer 对应文件全路径
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
 
 ;;(when (display-graphic-p)
 ;; Setting English Font
