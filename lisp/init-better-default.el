@@ -1,6 +1,7 @@
 
 ;; 开启左侧行号显示
-(global-linum-mode t)
+(when (version<= "26.0.50" emacs-version)
+  (global-display-line-numbers-mode))
 
 ;; 关闭自动备份
 ;;(setq make-backup-files nil)
