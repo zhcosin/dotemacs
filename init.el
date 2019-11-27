@@ -26,6 +26,7 @@
 ;;(require 'init-window-number)
 (require 'init-window-numbering)
 ;;(require 'init-powerline)
+(require 'init-yasnippet)
 (require 'init-orgmode)
 (require 'init-company)
 (require 'init-which-key)

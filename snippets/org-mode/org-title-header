@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: org-title-header
+# key: title
+# --
+
+#+HTML_HEAD:
+#+TITLE: 请输入文章标题
+#+AUTHOR: zhcosin
+#+DATE:
+#+OPTIONS:   ^:{} \n:t 
+#+LANGUAGE: zh-CN
