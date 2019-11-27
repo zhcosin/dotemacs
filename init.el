@@ -57,6 +57,7 @@
 (require 'init-org2pdf)
 (require 'init-python)
 (require 'init-magit)
+(require 'init-keyfreq)
 
 (defconst cosin/after-init-time (current-time))
 
