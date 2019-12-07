@@ -1,4 +1,8 @@
 
+;; Make startup faster by reducing the frequency of garbage
+;; collection.  The default is 800 kilobytes.  Measured in bytes.
+(setq gc-cons-threshold (* 50 1000 1000))
+
 ;; dotemacs file for zhcosin<zhcosin@163.com>.
 
 ;; note: 配置修改后生效
@@ -62,6 +66,9 @@
 (defconst cosin/after-init-time (current-time))
 
 (message "This start spent %.2f seconds." (float-time (subtract-time cosin/after-init-time cosin/befor-init-time)))
+
+(setq gc-cons-threshold (* 2 1000 1000))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
