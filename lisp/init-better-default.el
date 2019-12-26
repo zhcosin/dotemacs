@@ -52,6 +52,14 @@
 ;;(font-spec :family "Microsoft Yahei" :size 16)))
 ;;)
 
+(when (display-graphic-p)
+  (set-face-attribute 'default nil :font
+		      (format   "%s:pixelsize=%d" "Source Code Pro" 13))
+  (dolist (charset '(kana han cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font) charset
+		      (font-spec :family "微软雅黑" :size 16)))
+  )
+
 ;; set coding system.
 ;; you can try the follow command to reload file with
 ;; specified coding system to the buffer if you encoutered
