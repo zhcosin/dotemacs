@@ -83,6 +83,9 @@
 (prefer-coding-system 'utf-8)
 ;;(set-selection-coding-system 'utf-16-le)
 
+;; 指定保存 session 文件时使用的编码.
+(setq session-save-file-coding-system 'utf-8)
+
 ;; 使用下面的配置将删除功能配置成与其他图形界面的编辑器相同，即当你选中一段文字之后输入一个字符会替换掉你选中部分的文字。
 (delete-selection-mode t)
 
