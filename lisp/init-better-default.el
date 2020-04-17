@@ -99,7 +99,9 @@
 ;; 最近访问文件列表
 (require 'recentf)
 (recentf-mode 1)
-(setq recentf-max-menu-item 50)
+(setq recentf-max-saved-item 50)
+;; 按 C-x C-r 打开近期文件列表，该按键原本绑定的命令是 find-file-read-only，即以只读方式打开文件，不常用.
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 ;; 指定保存 .emacs.d/recentf 文件时使用的编码.
 (setq recentf-save-file-coding-system 'utf-8)
 
