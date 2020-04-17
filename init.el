@@ -62,6 +62,7 @@
 (require 'init-python)
 (require 'init-magit)
 (require 'init-keyfreq)
+(require 'init-deft)
 
 (defconst cosin/after-init-time (current-time))
 
@@ -76,7 +77,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (which-key helm smex desktop session window-number popwin monokai-theme company evil magit auctex company-auctex org-page flycheck chinese-number parinfer helm-swoop swiper-helm)))
+    (deft use-package which-key helm smex desktop session window-number popwin monokai-theme company evil magit auctex company-auctex org-page flycheck chinese-number parinfer helm-swoop swiper-helm)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
