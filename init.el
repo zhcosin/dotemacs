@@ -63,6 +63,7 @@
 (require 'init-magit)
 (require 'init-keyfreq)
 (require 'init-deft)
+(require 'init-rainbow-delimiters)
 
 (defconst cosin/after-init-time (current-time))
 
@@ -77,7 +78,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (deft use-package which-key helm smex desktop session window-number popwin monokai-theme company evil magit auctex company-auctex org-page flycheck chinese-number parinfer helm-swoop swiper-helm)))
+    (rainbow-delimiters deft use-package which-key helm smex desktop session window-number popwin monokai-theme company evil magit auctex company-auctex org-page flycheck chinese-number parinfer helm-swoop swiper-helm)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
