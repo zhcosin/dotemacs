@@ -25,6 +25,7 @@
 (zhcosin/install-package-if-not-found 'use-package)
 
 (require 'init-ui)
+(require 'init-rainbow-delimiters)
 (require 'init-recentf)
 (require 'init-better-default)
 (require 'init-colortheme)
@@ -64,7 +65,6 @@
 (require 'init-magit)
 (require 'init-keyfreq)
 (require 'init-deft)
-(require 'init-rainbow-delimiters)
 
 (defconst cosin/after-init-time (current-time))
 
