@@ -52,6 +52,14 @@
 ;;(font-spec :family "Microsoft Yahei" :size 16)))
 ;;)
 
+(when (display-graphic-p)
+  (set-face-attribute 'default nil :font
+          (format   "%s:pixelsize=%d" "Source Code Pro" 13))
+  (dolist (charset '(kana han cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font) charset
+          (font-spec :family "微软雅黑" :size 16))))
+  
+
 ;; set coding system.
 ;; you can try the follow command to reload file with
 ;; specified coding system to the buffer if you encoutered
@@ -62,7 +70,7 @@
 ;; and you can specified the coding system which use
 ;; to save file with the follow command.
 ;; M-x set-buffer-file-coding-system
-(set-language-environment "UTF-8")
+;;(set-language-environment "UTF-8") ;; 开启会导致在 *.yaml 文件中光标移动卡顿，暂未找到解决办法，临时禁用. 2020-04-04
 (set-default-coding-systems 'utf-8)
 ;;(set-file-name-coding-system 'gb18030)
 ;;(set-terminal-coding-system 'utf-8)
@@ -75,6 +83,9 @@
 (prefer-coding-system 'utf-8)
 ;;(set-selection-coding-system 'utf-16-le)
 
+;; 指定保存 session 文件时使用的编码.
+(setq session-save-file-coding-system 'utf-8)
+
 ;; 使用下面的配置将删除功能配置成与其他图形界面的编辑器相同，即当你选中一段文字之后输入一个字符会替换掉你选中部分的文字。
 (delete-selection-mode t)
 
@@ -85,10 +96,8 @@
 (when (display-graphic-p)
   (global-hl-line-mode t))
 
-;; 最近访问文件列表
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-item 10)
+;; 指定保存 .emacs.d/recentf 文件时使用的编码.
+(setq recentf-save-file-coding-system 'utf-8)
 
 ;; 自动加载外部修改过的文件
 (global-auto-revert-mode t)

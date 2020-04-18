@@ -1,8 +1,7 @@
 (zhcosin/install-package-if-not-found 'company)
 
-(use-package company-mode
+(use-package company
   :config
-  ;; 开启全局 Company 补全
-  (global-company-mode t))
+  (global-company-mode 1))
 
 (provide 'init-company)

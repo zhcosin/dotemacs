@@ -8,13 +8,27 @@
 (require 'ox-latex)
 (setq org-src-fontify-natively t)
 
+;; 在 org 允许文件中执行代码块
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (C . t)
+   (java . t)
+   (js . t)
+   (sql . t)
+   (ruby . t)
+   (python . t)
+   (shell . t)
+   (latex . t)
+   (plantuml . t)))
+
 ;; 设置 org 导出为 html 时公式的 mathjax 处理参数
 (setq org-html-mathjax-options
-  '((path "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
-    (scale "100")
-    (align "center")
-    (indent "2em")
-    (mathml nil)))
+      '((path "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+	(scale "100")
+	(align "center")
+	(indent "2em")
+	(mathml nil)))
 
 (setq org-html-mathjax-template
       "<script type=\"text/javascript\" src=\"%PATH\"></script>")

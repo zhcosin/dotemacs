@@ -2,6 +2,10 @@
 
 (use-package company-auctex
   :config
-  (company-auctex-init))
+  (add-hook 'LaTeX-mode-hook
+    (lambda ()
+      (make-local-variable 'company-backends)
+      (setq company-backends '())
+      (company-auctex-init))))
 
 (provide 'init-company-auctex)
