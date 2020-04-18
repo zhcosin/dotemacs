@@ -99,7 +99,7 @@
 ;; 最近访问文件列表
 (require 'recentf)
 (recentf-mode 1)
-(setq recentf-max-saved-item 50)
+(setq recentf-max-saved-items 50)
 
 ;; 批量打开近期文件
 ;; 将近期文件列表显示在一个 org-mode 的 buffer 中
