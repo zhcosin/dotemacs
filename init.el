@@ -25,6 +25,7 @@
 (zhcosin/install-package-if-not-found 'use-package)
 
 (require 'init-ui)
+(require 'init-recentf)
 (require 'init-better-default)
 (require 'init-colortheme)
 ;;(require 'init-window-number)

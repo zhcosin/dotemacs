@@ -96,40 +96,6 @@
 (when (display-graphic-p)
   (global-hl-line-mode t))
 
-;; 最近访问文件列表
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-saved-items 50)
-
-;; 批量打开近期文件
-;; 将近期文件列表显示在一个 org-mode 的 buffer 中
-;; 按 C-c C-c 进行勾选和反勾选.
-;; 勾选完成后再次执行，将打开勾选的多个文件，同时关闭 buffer.
-;; 在勾选过程中若要中止打开文件，可以直接关闭 buffer 即可.
-(defun zhcosin/open-recent-files ()
-  (interactive)
-  (let ((select-buffer "*SelectReccentFilesForOpen*"))
-    (if (buffer-live-p (get-buffer select-buffer))
-	(progn
-	  (with-current-buffer select-buffer
-	    (let ((content-lines (split-string (buffer-string) "\n" t)))
-	      (dolist (content-line content-lines)
-		(when (string-match "^\\s-*-\\s-*\\(\\[X\\]\\)\\s-*\\(.*\\)$" content-line)
-		  (let ((the-file-name (substring content-line (match-beginning 2) (match-end 2))))
-		    (message (concat "open recent file: " the-file-name))
-		    (find-file the-file-name))))))
-	  (kill-buffer select-buffer)) 
-      (progn
-        (get-buffer-create select-buffer)
-        (switch-to-buffer (get-buffer select-buffer))
-        (org-mode)
-        (insert "\n  recent file list:\n\n")
-        (dolist (file recentf-list)
-          (insert (concat " - [ ] " file "\n")))))))
-
-;; 按 C-x C-r 打开近期文件列表，该按键原本绑定的命令是 find-file-read-only，即以只读方式打开文件，不常用.
-(global-set-key "\C-x\ \C-r" 'zhcosin/open-recent-files)
-
 ;; 指定保存 .emacs.d/recentf 文件时使用的编码.
 (setq recentf-save-file-coding-system 'utf-8)
 
