@@ -26,6 +26,7 @@
     "hdf" 'describe-function
     "hdv" 'describe-variable
     "hdk" 'describe-key
+    "hdo" 'describe-symbol
     "w-" 'split-window-below
     "w/" 'split-window-right
     "w=" 'balance-windows
