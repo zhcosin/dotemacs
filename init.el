@@ -42,6 +42,7 @@
 (require 'init-tramp)
 (require 'init-evil-leader)
 (require 'init-evil)
+(require 'init-evil-visualstar)
 (require 'init-session)
 (require 'init-desktop)
 (require 'init-evil-nerd-commenter)
