@@ -9,6 +9,14 @@
 ;; 指定保存 .emacs.d/recentf 文件时使用的编码.
 (setq recentf-save-file-coding-system 'utf-8)
 
+;;;###autoload
+(define-minor-mode zhcosin/recentf-mode
+  "Minor mode for visual star selection."
+  :keymap (let ((map (make-sparse-keymap)))
+            (evil-define-key 'normal map (kbd "m") #'org-ctrl-c-ctrl-c)
+            map)
+  (evil-normalize-keymaps))
+
 ;; 批量打开近期文件，随后此函数被绑定到 C-x C-r 上.
 ;; 使用方法:
 ;;  - 按下 C-x C-r 打开展示近期文件列表的 buffer.
@@ -32,6 +40,7 @@
         (get-buffer-create select-buffer)
         (switch-to-buffer (get-buffer select-buffer))
         (org-mode)
+	(zhcosin/recentf-mode t)
         (insert "\n  recent file list:\n\n")
         (dolist (file recentf-list)
           (insert (concat " - [ ] " file "\n")))
@@ -40,6 +49,9 @@
 ;; 按 C-x C-r 打开近期文件列表，该按键原本绑定的命令是 find-file-read-only，即以只读方式打开文件，不常用,
 ;; 因此绑定此自定义函数.
 (global-set-key "\C-x\ \C-r" 'zhcosin/open-recent-files)
+
+(evil-leader/set-key
+    "fr" 'zhcosin/open-recent-files)
 
 (provide 'init-recentf)
 

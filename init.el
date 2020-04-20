@@ -26,7 +26,6 @@
 
 (require 'init-ui)
 (require 'init-rainbow-delimiters)
-(require 'init-recentf)
 (require 'init-better-default)
 (require 'init-colortheme)
 ;;(require 'init-window-number)
@@ -43,6 +42,7 @@
 (require 'init-evil-leader)
 (require 'init-evil)
 (require 'init-evil-visualstar)
+(require 'init-recentf)
 (require 'init-session)
 (require 'init-desktop)
 (require 'init-evil-nerd-commenter)
