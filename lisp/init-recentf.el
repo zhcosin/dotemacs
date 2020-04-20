@@ -12,7 +12,7 @@
 
 ;;;###autoload
 (define-minor-mode zhcosin/recentf-mode
-  "Minor mode for visual star selection."
+  "Minor mode for mark/unmark recent files to open."
   :keymap (let ((map (make-sparse-keymap)))
             (evil-define-key 'normal map (kbd "m") #'org-ctrl-c-ctrl-c)
             map)
