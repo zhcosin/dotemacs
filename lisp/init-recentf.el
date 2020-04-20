@@ -17,7 +17,7 @@
 ;; 在勾选过程中若要中止打开文件，可以直接关闭 buffer 即可，也可全部反勾选后按 C-x C-r.
 (defun zhcosin/open-recent-files ()
   (interactive)
-  (let ((select-buffer "*SelectReccentFilesForOpen*"))
+  (let ((select-buffer "*open recent files*"))
     (if (buffer-live-p (get-buffer select-buffer))
       (progn
         (with-current-buffer select-buffer
