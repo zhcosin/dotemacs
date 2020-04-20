@@ -56,7 +56,7 @@
 (require 'init-chinese-number)
 ;;(require 'init-flycheck)
 (require 'init-scheme)
-(require 'init-parinfer)
+;;(require 'init-parinfer)
 ;;(require 'autopair)
 (require 'init-helm-swoop)
 (require 'init-youdao-dictionary)
