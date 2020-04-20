@@ -20,6 +20,7 @@
     "qq" 'save-buffers-kill-terminal
     "ff" 'helm-find-files
     "fs" 'save-buffer
+    "fr" 'zhcosin/open-recent-files
     "bb" 'switch-to-buffer
     "bk" 'kill-buffer
     "bn" 'evil-buffer-new
