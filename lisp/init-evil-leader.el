@@ -22,6 +22,7 @@
     "fs" 'save-buffer
     "bb" 'switch-to-buffer
     "bk" 'kill-buffer
+    "bn" 'evil-buffer-new
     "bl" 'electric-buffer-list
     "hdf" 'describe-function
     "hdv" 'describe-variable
