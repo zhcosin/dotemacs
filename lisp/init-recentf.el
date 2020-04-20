@@ -1,5 +1,6 @@
 
 (require 'recentf)
+(require 'init-evil-leader)
 
 (recentf-mode 1)
 
