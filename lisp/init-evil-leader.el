@@ -28,6 +28,15 @@
     "hdv" 'describe-variable
     "hdk" 'describe-key
     "hdo" 'describe-symbol
+    "hdp" 'describe-package
+    "hdm" 'describe-mode
+    "hdL" 'describe-language-environment
+    "hds" 'describe-syntax
+    "hdC" 'describe-coding-system
+    "hdI" 'describe-input-method
+    "hdb" 'describe-bindings
+    "hdc" 'describe-key-briefly
+    "hdg" 'describe-gnu-project
     "w-" 'split-window-below
     "w/" 'split-window-right
     "w=" 'balance-windows
