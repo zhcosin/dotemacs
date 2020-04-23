@@ -66,6 +66,7 @@
 (require 'init-magit)
 (require 'init-keyfreq)
 (require 'init-deft)
+(require 'init-rg)
 
 (defconst cosin/after-init-time (current-time))
 
