@@ -5,7 +5,7 @@
 (recentf-mode 1)
 
 ;; 设置 recentf-list 的最大长度
-(setq recentf-max-saved-items 50)
+(setq recentf-max-saved-items 100)
 
 ;; 指定保存 .emacs.d/recentf 文件时使用的编码.
 (setq recentf-save-file-coding-system 'utf-8)
