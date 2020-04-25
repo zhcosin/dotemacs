@@ -88,6 +88,8 @@
 
 ;; 启动时忽略 desktop 的加锁文件，以避免加载 desktop 文件时的询问.
 (setq desktop-load-locked-desktop t)
+;; 总是在退出时保存 desktop 文件.
+(setq desktop-save t)
 (desktop-save-mode 1)
 
 ;; 使用下面的配置将删除功能配置成与其他图形界面的编辑器相同，即当你选中一段文字之后输入一个字符会替换掉你选中部分的文字。

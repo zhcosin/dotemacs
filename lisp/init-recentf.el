@@ -10,45 +10,78 @@
 ;; 指定保存 .emacs.d/recentf 文件时使用的编码.
 (setq recentf-save-file-coding-system 'utf-8)
 
-;;;###autoload
-(define-minor-mode zhcosin/recentf-mode
-  "Minor mode for mark/unmark recent files to open."
-  :keymap (let ((map (make-sparse-keymap)))
-            (evil-define-key 'normal map (kbd "m") #'org-ctrl-c-ctrl-c)
-            map)
-  (evil-normalize-keymaps))
 
-;; 批量打开近期文件，随后此函数被绑定到 C-x C-r 上.
-;; 使用方法:
-;;  - 按下 C-x C-r 打开展示近期文件列表的 buffer.
-;;  - 按 C-c C-c 进行勾选/反勾选.
-;;  - 再次按下 C-x C-r，被选中的多个文件将同时打开.
-;; 在勾选过程中若要中止打开文件，可以直接关闭 buffer 即可，也可全部反勾选后按 C-x C-r.
+(defvar-local selected-files nil)
+
+(define-derived-mode select-file-mode special-mode "Select-Files"
+  "mark/unmark files for select/unselect."
+  
+  (define-key select-file-mode-map (kbd "m")
+    (lambda () (interactive)
+      (let ((buffer-read-only nil))
+        (save-restriction
+          (narrow-to-region
+            (line-beginning-position)
+            (line-end-position))
+	  (goto-char (point-min))
+          (when (search-forward-regexp
+                 "^\\(\\s-*-\\s-*\\)\\(\\[ \\]\\)\\(\\s-*\\)\\(.*\\)$" 
+		 nil
+                 t)
+            (push
+              (buffer-substring (match-beginning 4) (match-end 4))
+              selected-files)
+	    (replace-match "\\1[X]\\3\\4")
+            (put-text-property
+              (line-beginning-position)
+              (line-end-position)
+              'face 'highlight)
+	  (goto-char (point-min)))))))
+
+  (define-key select-file-mode-map (kbd "u")
+    (lambda () (interactive)
+      (let ((buffer-read-only nil))
+        (save-restriction
+          (narrow-to-region
+            (line-beginning-position)
+            (line-end-position))
+	  (goto-char (point-min))
+          (when (search-forward-regexp
+                 "^\\(\\s-*-\\s-*\\)\\(\\[X\\]\\)\\(\\s-*\\)\\(.*\\)$" 
+		 nil
+                 t)
+            (remove (buffer-substring (match-beginning 4) (match-end 4))
+                      selected-files)
+	    (replace-match "\\1[ ]\\3\\4")
+            (put-text-property
+              (line-beginning-position)
+              (line-end-position)
+              'face 'default)
+	    (goto-char (point-min)))))))
+
+  (define-key select-file-mode-map (kbd "x")
+    (lambda () (interactive)
+      (let ((file-list selected-files))
+        (kill-buffer "*select file*")
+        (dolist (file file-list)
+          (find-file file)))))
+  (define-key select-file-mode-map (kbd "n") (kbd "C-n"))
+  (define-key select-file-mode-map (kbd "p") (kbd "C-p")))
+
 (defun zhcosin/open-recent-files ()
   (interactive)
-  (let ((select-buffer "*open recent files*"))
-    (if (buffer-live-p (get-buffer select-buffer))
-      (progn
-        (with-current-buffer select-buffer
-          (let ((content-lines (split-string (buffer-string) "\n" t)))
-            (dolist (content-line content-lines)
-              (when (string-match "^\\s-*-\\s-*\\(\\[X\\]\\)\\s-*\\(.*\\)$" content-line)
-                (let ((the-file-name (substring content-line (match-beginning 2) (match-end 2))))
-                  (message "open recent file: %s" the-file-name)
-                  (find-file the-file-name))))))
-      (kill-buffer select-buffer)) 
-      (get-buffer-create select-buffer)
-      (switch-to-buffer (get-buffer select-buffer))
-      (org-mode)
-      (zhcosin/recentf-mode t)
-      (insert "\n  recent file list:\n\n")
-      (dolist (file recentf-list)
-        (insert (concat " - [ ] " file "\n")))
-      (goto-line 1))))
+  (let ((file-list recentf-list))
+    (switch-to-buffer "*select file*")
+    (setq buffer-read-only nil)
+    (erase-buffer)
+    (insert "\n  recent files:\n\n")
+    (dolist (file file-list)
+      (insert " - [ ] " file "\n"))
+    (goto-char (point-min))
+    (setq selected-files nil)
+    (select-file-mode)))
 
-;; 按 C-x C-r 打开近期文件列表，该按键原本绑定的命令是 find-file-read-only，即以只读方式打开文件，不常用,
-;; 因此绑定此自定义函数.
-(global-set-key "\C-x\ \C-r" 'zhcosin/open-recent-files)
+(add-to-list 'evil-emacs-state-modes 'select-file-mode)
 
 (evil-leader/set-key
     "fr" 'zhcosin/open-recent-files)
