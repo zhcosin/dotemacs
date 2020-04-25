@@ -34,18 +34,17 @@
             (dolist (content-line content-lines)
               (when (string-match "^\\s-*-\\s-*\\(\\[X\\]\\)\\s-*\\(.*\\)$" content-line)
                 (let ((the-file-name (substring content-line (match-beginning 2) (match-end 2))))
-                  (message (concat "open recent file: " the-file-name))
+                  (message "open recent file: %s" the-file-name)
                   (find-file the-file-name))))))
-        (kill-buffer select-buffer)) 
-      (progn
-        (get-buffer-create select-buffer)
-        (switch-to-buffer (get-buffer select-buffer))
-        (org-mode)
-	(zhcosin/recentf-mode t)
-        (insert "\n  recent file list:\n\n")
-        (dolist (file recentf-list)
-          (insert (concat " - [ ] " file "\n")))
-        (goto-line 1)))))
+      (kill-buffer select-buffer)) 
+      (get-buffer-create select-buffer)
+      (switch-to-buffer (get-buffer select-buffer))
+      (org-mode)
+      (zhcosin/recentf-mode t)
+      (insert "\n  recent file list:\n\n")
+      (dolist (file recentf-list)
+        (insert (concat " - [ ] " file "\n")))
+      (goto-line 1))))
 
 ;; 按 C-x C-r 打开近期文件列表，该按键原本绑定的命令是 find-file-read-only，即以只读方式打开文件，不常用,
 ;; 因此绑定此自定义函数.
