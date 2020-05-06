@@ -54,10 +54,10 @@
 
 (when (display-graphic-p)
   (set-face-attribute 'default nil :font
-          (format   "%s:pixelsize=%d" "Source Code Pro" 13))
+          (format   "%s:pixelsize=%d" "Source Code Pro" 16))
   (dolist (charset '(kana han cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font) charset
-          (font-spec :family "微软雅黑" :size 16))))
+          (font-spec :family "微软雅黑" :size 20))))
   
 
 ;; set coding system.
@@ -94,6 +94,9 @@
 
 ;; 使用下面的配置将删除功能配置成与其他图形界面的编辑器相同，即当你选中一段文字之后输入一个字符会替换掉你选中部分的文字。
 (delete-selection-mode t)
+
+;; 缩进时，使用相应数量的空格而不是\t进行缩进.
+(setq-default indent-tabs-mode  nil)
 
 ;; 启用自动括号匹配(Highlight Matching Parenthesis)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
