@@ -52,6 +52,11 @@
 ;;(font-spec :family "Microsoft Yahei" :size 16)))
 ;;)
 
+;; font size configure set for multiply screen resolution, if it isn't contain your screen resolution,
+;; add it please, you should make sure the size of Chinese and English can assign in table for org-mode.
+(defconst zhcosin/font-size-for-resolution-alist '(("1920x1080" . (16 20)) ("1366x768" . (13 16))))
+(defvar zhcosin/screen-resolution "1920x1080") ;; my screen-resolution
+
 (when (display-graphic-p)
   (set-face-attribute 'default nil :font
           (format   "%s:pixelsize=%d" "Source Code Pro" 16))
