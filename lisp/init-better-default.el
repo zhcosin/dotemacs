@@ -158,6 +158,7 @@
 (require 'dired-x)
 
 ;;  还有一个小问题就是解决在不同系统中的换行符，例如在 DOS 系统下的 \M 换行符，这让我们有时候在 Unix 系统中很是头疼，因为它的存在会使版本控制误以为整行的代码都被修改过而造成不必要的麻烦。（你可以在这里找到更多关于 \M 的信息）,下面是删除这个换行符的函数.， 
+;; 在用 tramp 编辑远程文件时此函数未生效，用按键 C-x RET c undecided-unix RET C-x C-w RET y 解决问题，来源于 https://www.cnblogs.com/angelface/archive/2007/08/11/851782.html
 (defun remove-dos-eol ()
   "Replace DOS eolns CR LF with Unix eolns CR"
   (interactive)
