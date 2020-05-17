@@ -76,12 +76,12 @@
 ;; to save file with the follow command.
 ;; M-x set-buffer-file-coding-system
 ;;(set-language-environment "UTF-8") ;; 开启会导致在 *.yaml 文件中光标移动卡顿，暂未找到解决办法，临时禁用. 2020-04-04
-(set-default-coding-systems 'utf-8)
+(set-default-coding-systems 'utf-8-unix)
 ;;(set-file-name-coding-system 'gb18030)
 ;;(set-terminal-coding-system 'utf-8)
 ;;(set-keyboard-coding-system 'utf-8)
 ;;(set-clipboard-coding-system 'utf-8)
-;;(set-buffer-file-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8-unix)
 ;;(set-selection-coding-system 'utf-8)
 ;;(modify-coding-system-alist 'process "*" 'utf-8)
 (prefer-coding-system 'chinese-gbk)
@@ -89,7 +89,7 @@
 ;;(set-selection-coding-system 'utf-16-le)
 
 ;; 指定保存 session 文件时使用的编码.
-(setq session-save-file-coding-system 'utf-8)
+(setq session-save-file-coding-system 'utf-8-unix)
 
 ;; 启动时忽略 desktop 的加锁文件，以避免加载 desktop 文件时的询问.
 (setq desktop-load-locked-desktop t)
