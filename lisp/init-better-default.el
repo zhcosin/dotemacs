@@ -157,8 +157,13 @@
 ;; 启用 dired-x 可以让每一次进入 Dired 模式时，使用新的快捷键 C-x C-j 就可以进入当前文件夹的所在的路径。
 (require 'dired-x)
 
-;;  还有一个小问题就是解决在不同系统中的换行符，例如在 DOS 系统下的 \M 换行符，这让我们有时候在 Unix 系统中很是头疼，因为它的存在会使版本控制误以为整行的代码都被修改过而造成不必要的麻烦。（你可以在这里找到更多关于 \M 的信息）,下面是删除这个换行符的函数.， 
+
 ;; 在用 tramp 编辑远程文件时此函数未生效，用按键 C-x RET c undecided-unix RET C-x C-w RET y 解决问题，来源于 https://www.cnblogs.com/angelface/archive/2007/08/11/851782.html
+;; 将 windows 风格换行符 '\r\n' 替换为 unix 风格 '\n' 方法，以下两步(第一步非常重要):
+;;  - M-x set-buffer-file-coding-system 选择 **-unix 风格的编码(可以先查看变量 buffer-file-coding-system 查看原来编码确定前缀 **-unix 中的前缀).
+;;  - M-x replace-string RET C-q C-m RET RET
+;; 我这份配置中只要执行第一步，它就已经做好了第二步的替换，暂不清楚原因.
+;; 将 windows 风格换行符替换为 unix 风格的函数，但实际使用时未必生效.
 (defun remove-dos-eol ()
   "Replace DOS eolns CR LF with Unix eolns CR"
   (interactive)
