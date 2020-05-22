@@ -22,6 +22,9 @@
    (latex . t)
    (plantuml . t)))
 
+;; 设置 org 导出文本文件时的单行文本最大宽度.
+(setq org-ascii-text-width 1000)
+
 ;; 设置 org 导出为 html 时公式的 mathjax 处理参数
 (setq org-html-mathjax-options
       '((path "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
