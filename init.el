@@ -44,7 +44,6 @@
 (require 'init-evil-visualstar)
 (require 'init-recentf)
 (require 'init-session)
-(require 'init-desktop)
 (require 'init-evil-nerd-commenter)
 ;;(require 'init-ox-latex-chinese)
 (require 'init-auctex)
@@ -67,6 +66,7 @@
 (require 'init-keyfreq)
 (require 'init-deft)
 (require 'init-rg)
+(require 'init-desktop)
 
 (defconst cosin/after-init-time (current-time))
 
