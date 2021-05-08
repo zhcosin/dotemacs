@@ -6,6 +6,7 @@
 (use-package evil
   :init
   (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)  ;; fix issue TAB key not working in org-mode when emacs run in terminal, see https://stackoverflow.com/questions/22878668/emacs-org-mode-evil-mode-tab-key-not-working
   (setq evil-search-wrap nil)
   (setq evil-normal-state-cursor '("red" box))
   :config
