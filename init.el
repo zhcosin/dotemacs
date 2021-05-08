@@ -28,6 +28,7 @@
 (require 'init-rainbow-delimiters)
 (require 'init-better-default)
 (require 'init-colortheme)
+(require 'init-eshell)
 ;;(require 'init-window-number)
 (require 'init-window-numbering)
 ;;(require 'init-powerline)
