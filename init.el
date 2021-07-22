@@ -70,6 +70,7 @@
 (require 'init-rg)
 (require 'init-desktop)
 (require 'init-wsl)
+(require 'init-restclient)
 
 (defconst cosin/after-init-time (current-time))
 
